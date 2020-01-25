@@ -89,7 +89,7 @@ class App extends Component {
     //inline if statements work! {statement ? true : false}
     return (
       <div className="App">
-        <h1>hi</h1>
+        <h1>Hello</h1>
         <p className={classes.join(' ')}>This is dog</p>
         <button
           style={buttonStyle}
