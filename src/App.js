@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
+//import styled from 'styled-components'
 //import Radium, {StyleRoot} from 'radium'
 
 
@@ -46,27 +47,8 @@ class App extends Component {
   }
   // anonymous function can be inneficient, use bind where possible
   render() {
-    const buttonStyle = {
-      backgroundColor: 'white',
-      font: 'inherit',
-      border: '1px solid black',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'red',
-        color: 'black'
-      }
-    }
-
     let people = null;
-
     if (this.state.showPeopleBool) {
-
-      buttonStyle.backgroundColor = 'blue';
-      buttonStyle.color = 'white';
-      buttonStyle[':hover'] = {
-        backgroundColor: 'green'
-      }
       
       people = (
         <div>
@@ -100,9 +82,9 @@ class App extends Component {
         <div className="App">
         <h1>Hello</h1>
         <p className={classes.join(' ')}>This is dog</p>
-        <button
-          style={buttonStyle}
-          onClick={this.showPeople}>Show/hide</button>
+        <button className="button" alt={this.state.showPeopleBool}
+          onClick={this.showPeople}>Show/hide
+          </button>
           {people}
       </div>
       
@@ -110,7 +92,29 @@ class App extends Component {
     );
   }
 }
+/* styledcomponents const StyledButton = styled.button`
+      background-color: ${props => props.alt ? 'blue' : 'white'};
+      font: inherit;
+      border: 1px solid black;
+      padding: 8px;
+      cursor: pointer;
 
+      &:hover {
+        background-color: ${props => props.alt ? 'green' : 'red'};
+        color: ${props => props.alt ? 'white' : 'black'};
+      }
+` */
+/* inline css const buttonStyle = {
+      backgroundColor: 'white',
+      font: 'inherit',
+      border: '1px solid black',
+      padding: '8px',
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'red',
+        color: 'black'
+      }
+    } */
 /* HARDCODED
 nameHandler = (newName) => {
     // NOPE this.state.persons[0].name = "Adam";
