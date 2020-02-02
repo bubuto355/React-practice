@@ -1,4 +1,4 @@
-/* .Person {
+.Person {
     width: 60%;
     margin: 16px auto;
     border: 1px solid rgb(3, 3, 3);
@@ -12,4 +12,4 @@
     .Person{
         width: 300px;
     }
-} */
+}

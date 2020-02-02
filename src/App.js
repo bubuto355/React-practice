@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import Person from './Person/Person'
+import styles from './App.module.css';
+import Person from './Person/Person';
 //import styled from 'styled-components'
 //import Radium, {StyleRoot} from 'radium'
 
@@ -47,9 +47,11 @@ class App extends Component {
   }
   // anonymous function can be inneficient, use bind where possible
   render() {
+    let btnClass = [styles.button];
+          
     let people = null;
     if (this.state.showPeopleBool) {
-      
+      btnClass.push(styles.buttonClicked);
       people = (
         <div>
           {this.state.persons.map((person, index) => {
@@ -67,10 +69,10 @@ class App extends Component {
 
     const classes = [];
     if(this.state.persons.length < 3){
-      classes.push('red');
+      classes.push(styles.red);
     }
     if (this.state.persons.length <= 1){
-      classes.push('bold');
+      classes.push(styles.bold);
     }
       
     
@@ -79,13 +81,13 @@ class App extends Component {
     //inline if statements work! {statement ? true : false}
     return (
       
-        <div className="App">
+        <div className={styles.App}>
         <h1>Hello</h1>
         <p className={classes.join(' ')}>This is dog</p>
-        <button className="button" alt={this.state.showPeopleBool}
+        <button className={btnClass.join(' ')} alt={this.state.showPeopleBool}
           onClick={this.showPeople}>Show/hide
           </button>
-          {people}
+        {people}
       </div>
       
       
