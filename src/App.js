@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
-import Radium, {StyleRoot} from 'radium'
+//import Radium, {StyleRoot} from 'radium'
 
 
 class App extends Component {
@@ -96,7 +96,7 @@ class App extends Component {
     //cmd + D to quickly selecet multiple of the same variable
     //inline if statements work! {statement ? true : false}
     return (
-      <StyleRoot>
+      
         <div className="App">
         <h1>Hello</h1>
         <p className={classes.join(' ')}>This is dog</p>
@@ -105,7 +105,7 @@ class App extends Component {
           onClick={this.showPeople}>Show/hide</button>
           {people}
       </div>
-      </StyleRoot>
+      
       
     );
   }
@@ -136,4 +136,6 @@ nameHandler = (newName) => {
             name={this.state.persons[2].name}
             age={this.state.persons[2].age} />*/
 
-export default Radium(App);
+//export default Radium(App);
+//<StyleRoot></StyleRoot>
+export default App;
