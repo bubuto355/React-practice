@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person'
-import Radium from 'radium'
+import Radium, {StyleRoot} from 'radium'
 
 
 class App extends Component {
@@ -96,7 +96,8 @@ class App extends Component {
     //cmd + D to quickly selecet multiple of the same variable
     //inline if statements work! {statement ? true : false}
     return (
-      <div className="App">
+      <StyleRoot>
+        <div className="App">
         <h1>Hello</h1>
         <p className={classes.join(' ')}>This is dog</p>
         <button
@@ -104,6 +105,8 @@ class App extends Component {
           onClick={this.showPeople}>Show/hide</button>
           {people}
       </div>
+      </StyleRoot>
+      
     );
   }
 }
